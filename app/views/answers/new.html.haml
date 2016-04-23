@@ -1,0 +1,7 @@
+Answers#New
+%br
+= @survey.inspect
+
+%ul
+  - @survey.questions.each do |question|
+    %li= question.inspect
