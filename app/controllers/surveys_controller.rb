@@ -1,7 +1,9 @@
 class SurveysController < ApplicationController
   def show
     @survey = Survey
-      .preload(questions: :answers) # This is a bit slower, but sets up the association
+      .includes(:questions => :answers)
       .find_by_slug!(params[:id])
+
+    @survey.questions.each { |q| q.stats(@survey) }
   end
 end
