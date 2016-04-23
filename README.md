@@ -10,10 +10,10 @@ rails server
 
 ## TODO
 
-* ~Answer Entry Form~
-* ~Answer Create Action~
-* ~Survey Show Page~
-* ~Survey Stats~
+* ~~Answer Entry Form~~
+* ~~Answer Create Action~~
+* ~~Survey Show Page~~
+* ~~Survey Stats~~
 * tests!
 * rails_admin (No rails 5 compat gem)
 * Dockerize
