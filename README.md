@@ -10,9 +10,9 @@ rails server
 
 ## TODO
 
-* Answer Entry Form
-* Answer Create Action
-* Survey Show Page
+* ~Answer Entry Form~
+* ~Answer Create Action~
+* ~Survey Show Page~
 * Survey Stats
 * tests!
 * rails_admin

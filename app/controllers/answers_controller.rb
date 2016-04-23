@@ -1,6 +1,4 @@
 class AnswersController < ApplicationController
-  helper AnswersHelper
-
   def new
     @survey = Survey
       .preload(:questions)
