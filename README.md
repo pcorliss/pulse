@@ -2,11 +2,13 @@
 
 ## Development
 
-git clone ...
-bundle
+```
+git clone https://github.com/pcorliss/pulse.git
+bundle install
 createdb pulse_development
 rspec
 rails server
+```
 
 ## TODO
 
@@ -19,5 +21,9 @@ rails server
 * Dockerize
 * Make Prettier
 * D3 Stats
+* Validations on input
+* True/False Questions
+* Freeform Text Questions
+* Thanks for taking the survey flash message
 * AnswerSets
 * Single Vote Per Person

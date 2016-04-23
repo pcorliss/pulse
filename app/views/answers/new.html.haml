@@ -1,14 +1,14 @@
-Answers#New
-%br
-= @survey.inspect
-
 = form_tag :controller => 'answers', :action => 'create' do
 
-  %ul
-    - @survey.questions.each do |question|
-      %li
-        = question.inspect
-        - 5.times do |text|
-          = radio_button_tag question.id, text
+  - @survey.questions.each do |question|
 
-    %li= submit_tag
+    .panel.panel-info
+      .panel-heading
+        %h4.panel-title= question.title
+      .panel-body
+        %span.radio-inline Strongly Disagree
+        - (1..5).each do |i|
+          = radio_button_tag question.id, i, false, class: 'radio-inline'
+        %span.no-left-pad.radio-inline Strongly Agree
+
+  = submit_tag "Submit"
