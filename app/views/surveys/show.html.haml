@@ -1,1 +1,10 @@
 Survey#Show
+%br
+= @survey.inspect
+
+%ul
+  - @survey.questions.each do |question|
+    %li=question.inspect
+    %ul
+      - question.answers.each do |answer|
+        %li=answer.inspect
