@@ -7,7 +7,7 @@ module ApplicationHelper
 
     questions.each do |question|
       streams[question.id] = {
-        key: question.id.to_s, # need short-title
+        key: question.short_title, # need short-title
         values: []
       }
 
