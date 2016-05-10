@@ -1,8 +1,9 @@
 require 'rails_helper'
 
 describe Survey do
+  let(:survey) { Survey.new }
+
   describe "#expired?" do
-    let(:survey) { Survey.new }
     it "returns false if expiration is null" do
       expect(survey.expired?).to be_falsey
     end
