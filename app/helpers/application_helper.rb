@@ -7,7 +7,7 @@ module ApplicationHelper
 
     questions.each do |question|
       streams[question.id] = {
-        key: question.short_title, # need short-title
+        key: question.short_title,
         values: []
       }
 
@@ -17,7 +17,6 @@ module ApplicationHelper
 
     responses.each do |response|
       next if response.response.nil?
-      #response_count[response.question_id][response.response] ||= 0 # only happens on invalid vals
       response_count[response.question_id][response.response] += 1
     end
 
