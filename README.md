@@ -6,6 +6,7 @@
 git clone https://github.com/pcorliss/pulse.git
 bundle install
 createdb pulse_development
+createdb pulse_test
 rspec
 rails server
 ```
