@@ -13,6 +13,10 @@
     - else
       Ends in #{distance_of_time_in_words_to_now(@survey.expiration)}
 
+- if cookies[@survey.slug]
+  %h4
+    You took this survey #{distance_of_time_in_words_to_now cookies[@survey.slug]} ago
+
 .survey_chart
   %svg
 

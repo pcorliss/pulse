@@ -15,6 +15,15 @@ describe AnswersController do
         expect(response).to redirect_to(survey_path(survey.slug))
       end
     end
+
+    context "survey taken according to cookie" do
+      it "redirects to the survey show path" do
+        survey.save
+        request.cookies[survey.slug] = Time.now
+        get :new, params: valid_params
+        expect(response).to redirect_to(survey_path(survey.slug))
+      end
+    end
   end
 
   describe "#create" do
@@ -22,6 +31,12 @@ describe AnswersController do
       survey.save
       post :create, params: valid_params
       expect(response).to redirect_to(survey_path(survey.slug))
+    end
+
+    it "sets a cookie indicating you've already taken the survey" do
+      survey.save
+      post :create, params: valid_params
+      expect(response.cookies[survey.slug]).to_not be_nil
     end
 
     context "expired survey" do

@@ -1,5 +1,7 @@
 # Pulse
 
+A simple rails 5 app for pulse/feedback surveys
+
 ## Development
 
 ```
@@ -25,13 +27,12 @@ rails server
 * Validations on input
 * Freeform Text Questions
 * ~~Survey Start/Stop Open/Close~~
-* Disable Result Viewing until a critical mass of votes have been
-  retrieved
+* Disable Result Viewing until a critical mass of votes have been retrieved
 * Team Scoping/Org Scoping
 * Thanks for taking the survey flash message
 * AnswerSets
 * Slack integration (Send links, post results)
-* Single Vote Per Person
+* ~~Single Vote Per Person~~
 * Historical Stats
 
 ## User Stories
