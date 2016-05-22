@@ -13,6 +13,11 @@ describe AnswersController do
   end
 
   context "expired survey" do
-    it "returns 400"
+    it "returns 400" do
+      survey.expiration = 1.minute.ago
+      survey.save
+      post :create, params: valid_params
+      expect(response.status).to eq(400)
+    end
   end
 end
