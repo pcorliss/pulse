@@ -16,6 +16,20 @@
 .survey_chart
   %svg
 
+- @survey.questions.each do |question|
+  - stats = question.stats(@survey)
+  .panel.panel-info
+    .panel-heading
+      %h4.panel-title= "#{question.short_title}: #{question.title}"
+    .panel-body
+      %dl.dl-stats.dl-horizontal
+        %dt Responses
+        %dd= stats[:number].to_i
+        %dt Median
+        %dd= stats[:median]
+        %dt Mean
+        %dd= "%0.2f" % stats[:mean]
+
 -#.historical_chart
   -#%svg
 
