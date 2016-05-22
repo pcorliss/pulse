@@ -36,26 +36,13 @@ questions = questions_hash.map do |short, question_text|
   )
 end
 
-pulse1 = Survey.create(
-  slug: 'pulse_two_weeks_ago',
-  created_at: 2.weeks.ago,
-  expiration: 1.weeks.ago,
-)
-pulse2 = Survey.create(
-  slug: 'pulse_one_weeks_ago',
-  created_at: 1.weeks.ago,
-  expiration: Time.now,
-)
-pulse3 = Survey.create(
-  slug: 'pulse_current',
-  created_at: Time.now,
-  expiration: 1.week.from_now,
-)
-
-pulse_surveys = [pulse1, pulse2, pulse3]
-
 pulse_questions = questions.shuffle.first(5)
-pulse_surveys.each do |survey|
+[2.weeks.ago, 1.week.ago, Time.now].each do |start_time|
+  survey = Survey.create(
+    slug: "pulse_#{start_time.strftime("%Y_%m_%d")}",
+    created_at: start_time,
+    expiration: start_time + 1.week,
+  )
   survey.questions = pulse_questions
   pulse_questions.each do |question|
     10.times do |i|
