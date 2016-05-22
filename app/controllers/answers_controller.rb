@@ -3,6 +3,7 @@ class AnswersController < ApplicationController
     @survey = Survey
       .preload(:questions)
       .find_by_slug!(params[:survey_id])
+    redirect_to survey_path @survey.slug if @survey.expired?
   end
 
   def create
