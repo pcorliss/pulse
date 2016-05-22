@@ -1,0 +1,19 @@
+- @surveys.each do |survey|
+
+  %dl.dl-horizontal
+    %dt Responses
+    %dd= link_to survey.slug, survey_path(survey.slug)
+
+    %dt Started
+    %dd
+      = distance_of_time_in_words_to_now(survey.created_at)
+      ago
+
+    - if survey.expired?
+      %dt Ended
+      %dd
+        = distance_of_time_in_words_to_now(survey.expiration)
+        ago
+    - elsif survey.expiration
+      %dt Ends in
+      %dd= distance_of_time_in_words_to_now(survey.expiration)

@@ -6,4 +6,8 @@ class SurveysController < ApplicationController
 
     @survey.questions.each { |q| q.stats(@survey) }
   end
+
+  def index
+    @surveys = Survey.all
+  end
 end
