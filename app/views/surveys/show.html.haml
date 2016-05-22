@@ -32,7 +32,7 @@
         %dt Median
         %dd= stats[:median]
         %dt Mean
-        %dd= "%0.2f" % stats[:mean]
+        %dd= "%0.2f" % stats[:mean] if stats[:mean]
 
 -#.historical_chart
   -#%svg
