@@ -22,7 +22,9 @@
   - stats = question.stats(@survey)
   .panel.panel-info
     .panel-heading
-      %h4.panel-title= "#{question.short_title}: #{question.title}"
+      %h4.panel-title
+        %strong= "#{question.short_title}:"
+        = question.title
     .panel-body
       %dl.dl-stats.dl-horizontal
         %dt Responses

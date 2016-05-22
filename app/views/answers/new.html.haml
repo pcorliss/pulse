@@ -4,7 +4,9 @@
 
     .panel.panel-info
       .panel-heading
-        %h4.panel-title= "#{question.short_title}: #{question.title}"
+        %h4.panel-title
+          %strong= "#{question.short_title}:"
+          = question.title
       .panel-body
         %span.radio-inline Strongly Disagree
         - (1..5).each do |i|
