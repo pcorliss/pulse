@@ -6,11 +6,24 @@ A simple rails 5 app for pulse/feedback surveys
 
 ```
 git clone https://github.com/pcorliss/pulse.git
+cd pulse
 bundle install
 createdb pulse_development
 createdb pulse_test
 rspec
 rails server
+```
+
+## Heroku
+
+```
+git clone https://github.com/pcorliss/pulse.git
+cd pulse
+heroku login
+heroku create
+git push heroku master
+heroku run rake db:migrate
+heroku run rake db:seed
 ```
 
 ## TODO
