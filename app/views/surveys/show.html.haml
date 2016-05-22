@@ -1,5 +1,18 @@
 - d3_data = transform_responses_d3(@survey, @survey.answers, @survey.questions)
 
+%h3
+  Survey: #{@survey.slug}
+
+%h4
+  Started #{distance_of_time_in_words_to_now(@survey.created_at)} ago
+
+- if @survey.expiration
+  %h4
+    - if @survey.expired?
+      Ended #{distance_of_time_in_words_to_now(@survey.expiration)} ago
+    - else
+      Ends in #{distance_of_time_in_words_to_now(@survey.expiration)}
+
 .survey_chart
   %svg
 
