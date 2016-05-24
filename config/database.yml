@@ -80,6 +80,8 @@ test:
 #
 production:
   <<: *default
-  database: pulse_production
-  username: pulse
+  database: <%= ENV['PULSE_DATABASE_NAME'] || 'pulse_production' %>
+  username: <%= ENV['PULSE_DATABASE_USERNAME'] || 'pulse' %>
   password: <%= ENV['PULSE_DATABASE_PASSWORD'] %>
+  host: <%= ENV['PULSE_DATABASE_HOST'] || 'localhost' %>
+  port: <%= ENV['PULSE_DATABASE_PORT'] || 5432 %>

@@ -9,6 +9,7 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'jquery-rails'
 gem 'haml-rails', '~> 0.9.0'
 gem 'descriptive_statistics', '~> 2.5.1', :require => 'descriptive_statistics/safe'
+gem 'pry-rails' # For the purposes of running rails console
 
 group :production do
   gem 'rails_12factor'
@@ -16,7 +17,6 @@ end
 
 group :development, :test do
   gem 'byebug'
-  gem 'pry'
 end
 
 group :test do

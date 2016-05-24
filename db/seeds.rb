@@ -13,9 +13,8 @@ Survey.destroy_all
 Answer.destroy_all
 
 questions_hash = {
-  "Happy" => "I'm happy when I'm at work.",
   "Refer" => "I would refer someone to work here.",
-  "Understanding" => "I have a clear understanding of my career.",
+  "Understanding" => "I have a clear understanding of my career path.",
   "Work Life Balance" => "I'm happy with my work-life balance.",
   "Valued" => "I feel valued at work.",
   "Recognition" => "I receive recognition from my manager often.",
@@ -24,7 +23,7 @@ questions_hash = {
   "Transparent" => "I feel like the management team here is transparent.",
   "Core Values" => "I can recite my organization's core values.",
   "Upwards" => "I feel comfortable giving upwards feedback to my supervisor.",
-  "Fun" => "I have fun at work.",
+  "Overall" => "Overall I'm satisfied working here.",
 }
 #Hypothetically, if you were to quit tomorrow, what would your reason be?
 #What three words would you use to describe our culture?

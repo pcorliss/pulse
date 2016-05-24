@@ -21,6 +21,7 @@ RUN apk --update --upgrade add $BUILD_PACKAGES $RUBY_PACKAGES $DEV_PACKAGES \
 
 ENV RAILS_ENV production
 ENV RACK_ENV production
+ENV PAGER more
 
 COPY . ./
 
